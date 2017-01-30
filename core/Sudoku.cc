@@ -38,16 +38,14 @@ void Sudoku::createCNF(){
 	} 
 
 	//add the constraint that each element can have only one value
-//	for(int elm = 1 ; elm <= 81 ; elm++){
-		int elm = 1 ; 
+	for(int elm = 1 ; elm <= 81 ; elm++){
 		for(int val1 = 1 ; val1 <= 9 ; val1++){
 			for(int val2 = val1 + 1 ; val2 <= 9 ; val2++)
 			{	
 				aImpliesNotB(elmvalToVar(elm,val1),elmvalToVar(elm,val2));
-//				std::cout << elmvalToVar(elm,val1) << " => ~ " << elmvalToVar(elm,val2) << std::endl ; 
 			}
 		} 
-//	}
+	}
 
 	//add the constraint that each row will have unique values
 	for(int elm = 1 ; elm <= 81 ; elm++){
@@ -117,9 +115,6 @@ void Sudoku::displayResult(std::vector<int> & model){
 			colNum = 9;
 		int rowNum = ((element - 1)/9) + 1 ; 
 		result[rowNum][colNum] = val ;
-		
-	//	std::cout << "var = " << model[i] << " el = " << element << " val = " << val << "("<< rowNum << "," << colNum << ")" << std::endl;
-
 	}
 	for(int i = 1 ; i <= 9 ; i++){
 		for(int j = 1 ; j <= 9 ; j++){
