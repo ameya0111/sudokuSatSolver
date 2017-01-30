@@ -12,7 +12,7 @@ The output is again presented as a solved Sudoku.
 
 BUILDING:  
 (supported on Linux machines having gcc)  
-export MROOT=<sudokuSatSolver-dir>  
+export MROOT=&lt;sudokuSatSolver-dir&gt;  
 cd core  
 make  
 
